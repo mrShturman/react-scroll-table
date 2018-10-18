@@ -11,13 +11,13 @@ class ReactScrollTable extends Component {
   componentWillMount() {
     this.state = {
       shownData: this.props.data,
-      bodyStyle: {
+      bodyStyle: Object.assign({
         borderColor: this.props.borderColor,
         boxSizing: 'border-box',
         overflowY: 'auto',
         display: 'block'
-      },
-      headerStyle: {
+      }, this.props.bodyStyle),
+      headerStyle: Object.assign({
         border: '1px solid',
         borderBottom: '2px solid',
         backgroundColor: this.props.backgroundColor,
@@ -28,13 +28,13 @@ class ReactScrollTable extends Component {
         fontSize: 16,
         textAlign: 'left',
         padding: 5
-      },
-      footerStyle: {
+      }, this.props.headerStyle),
+      footerStyle: Object.assign({
         borderTop: '1px solid',
         borderColor: this.props.borderColor,
         padding: 0
-      },
-      cellStyle: {
+      }, this.props.footerStyle),
+      cellStyle: Object.assign({
         color: this.props.textColor,
         border: '1px solid',
         borderBottom: 'hidden',
@@ -42,7 +42,7 @@ class ReactScrollTable extends Component {
         boxSizing: 'border-box',
         padding: 5,
         verticalAlign: 'top'
-      }
+      }, this.props.cellStyle)
     }
   }
 
