@@ -242,7 +242,7 @@ var TableHeader = function TableHeader(_ref) {
       downIcon = _ref.downIcon;
   return _react2.default.createElement(
     'thead',
-    { style: { display: 'table', width: 'calc(100% - 1em)', tableLayout: 'fixed' } },
+    { style: { display: 'table', width: 'calc(100% - 1.1em)', tableLayout: 'fixed' } },
     _react2.default.createElement(
       'tr',
       null,

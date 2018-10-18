@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TableHeader = ({columns, headerStyle, sortFunction, sortState, textColor, upIcon, downIcon}) => (
-  <thead style={{display: 'table', width: 'calc(100% - 1em)', tableLayout: 'fixed'}}>
+  <thead style={{display: 'table', width: 'calc(100% - 1.1em)', tableLayout: 'fixed'}}>
   <tr>
     {columns.map(function (col, key) {
       let isSorted = sortState[col.accessor];
