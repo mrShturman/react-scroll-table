@@ -149,7 +149,8 @@ var TableBodyWithData = function TableBodyWithData(_ref) {
       maxHeight = _ref.maxHeight,
       shaded = _ref.shaded,
       shadedColor = _ref.shadedColor,
-      backgroundColor = _ref.backgroundColor;
+      backgroundColor = _ref.backgroundColor,
+      appendix = _ref.appendix;
   return _react2.default.createElement(
     "tbody",
     { id: "table-body", className: "react-clean-table-body", style: Object.assign({}, bodyStyle, { maxHeight: maxHeight ? maxHeight - 29 : null }) },
@@ -166,7 +167,16 @@ var TableBodyWithData = function TableBodyWithData(_ref) {
           );
         })
       );
-    })
+    }),
+    !!appendix && _react2.default.createElement(
+      "tr",
+      { key: "appendix", style: { display: 'table', width: 'calc(100% - 1px)', tableLayout: 'fixed', backgroundColor: backgroundColor } },
+      _react2.default.createElement(
+        "td",
+        { colSpan: columns.length },
+        appendix
+      )
+    )
   );
 };
 

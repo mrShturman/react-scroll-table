@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TableBodyWithData = ({shownData, bodyStyle, columns, actionCellFormatter, cellStyle, maxHeight, shaded, shadedColor, backgroundColor}) => (
+const TableBodyWithData = ({shownData, bodyStyle, columns, actionCellFormatter, cellStyle, maxHeight, shaded, shadedColor, backgroundColor, appendix}) => (
   <tbody id="table-body" className="react-clean-table-body" style={Object.assign({}, bodyStyle, {maxHeight: maxHeight ? maxHeight - 29 : null})}>
   {shownData.map(function (row, key1) {
     let alternateShade = key1 % 2 === 0 ? shadedColor : backgroundColor;
@@ -17,6 +17,12 @@ const TableBodyWithData = ({shownData, bodyStyle, columns, actionCellFormatter, 
       </tr>
     );
   })}
+  {
+    !!appendix &&
+    <tr key='appendix' style={{display: 'table', width: 'calc(100% - 1px)', tableLayout: 'fixed', backgroundColor }}>
+      <td colSpan={columns.length}>{appendix}</td>
+    </tr>
+  }
   </tbody>
 );
 
